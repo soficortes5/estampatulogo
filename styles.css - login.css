@@ -1,0 +1,116 @@
+.form{
+    background-color: white;
+    margin: auto;
+    width: 90%;
+    max-width: 400px;
+    padding: 4.5em 3em;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px -5px rgb(0 0 0 / 30%);
+    text-align: center;
+}
+
+.form-container{
+    margin-top: 3em;
+    display: grid;
+    gap: 2.5em;
+    color: #343e3d;
+}
+
+.caja-texto{
+    width: 100%;
+    background: none;
+    color: #343e3d;
+    font-size: 1rem;
+    padding: .6em .3em;
+    border: none;
+    outline: none;
+    border-bottom: goldenrod;
+
+}
+
+.caja-texto:focus + .caja-label,
+.caja-texto:not(:placeholder-shown) + .caja-label{
+    transform: translateY(-12px) scale(.7);
+    transform-origin: left top;
+    color: goldenrod;
+}
+
+.caja-label{
+    color: var(--color);
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 5px;
+    transform: translateY(10px);
+    transition: transform .5s, color .3s;
+}
+
+.formulario{
+    position: relative;
+
+}
+
+.formulario-titulo{
+    background: goldenrod;
+    color: white;
+    font-weight: 300;
+    font-size: 1rem;
+    padding: .8em 0;
+    border: none;
+    border-radius: .5em;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.fa-solid{
+    padding-left: 10px;
+}
+
+.linea-texto{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: goldenrod
+}
+
+.image-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 25px;
+}
+
+img{
+    width: 30%;
+    height: auto;    
+}
+
+.registrate-texto{
+    font-size: 20px;
+}
+
+
+@media (max-width:425px){
+    .registrate-texto{
+        font-size: 1.8rem;
+    }
+}
+
+.home{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.fa-pen{
+    color: goldenrod;
+    font-size: 20px;
+}
+
+.home-bottom{
+    font-size: 10px;
+}

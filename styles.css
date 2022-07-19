@@ -1,0 +1,539 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;1,500&family=Roboto:ital,wght@1,300&display=swap');
+
+
+* { 
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto', sans-serif;
+    gap: 24px;
+}
+
+html {   
+    scroll-behavior: smooth;   scroll-padding-top: 100px; 
+}
+
+
+/*NAV*/
+
+.nav-bar-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 26px;
+    height: 75px;
+    width: 100%;
+    position: fixed;
+    z-index: 10000;
+    background-color: white;
+}
+
+.logo-container {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    order: 2;
+    height: 56px;
+    box-sizing: border-box;
+}
+
+.logo {
+    height: 40px;
+    flex: 1 1 100%;
+
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    font-family: 'sans-serif';
+    gap: 10px;
+}
+
+.menu-user-icono {
+    order: 3;
+}
+
+.menu-hamburguesa-icono, .menu-user-icono a{
+    font-size: 32px;
+    color: goldenrod;
+
+    cursor: pointer;
+}
+
+.menu-user-icono:active {
+    color: #00168A;
+}
+
+.toggle {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    visibility: visible;
+    height: 100vh;
+    width: 70vw;
+    position: fixed;
+    top: 70px;
+    left: -100%;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.7s ease;
+    z-index: 10;
+
+}
+
+.toggle li {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    color: goldenrod;
+    border-bottom: 1px solid black;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: all  0.5s ease;
+    border-bottom: #48cac600;
+}
+
+.toggle li a {
+    text-decoration: none;
+    color: goldenrod;
+    font-family: 'sans-serif';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+
+.toggle li:hover > a, .toggle li:hover > i {
+    color: goldenrod;
+    transition: color 0.5s ease;
+
+}
+
+.toggle li:active > a, .toggle li:active > i {
+    color: goldenrod;
+    transition: color 0.5s ease;
+
+}
+
+.menu-toggle:checked ~ .toggle {
+    top: 70px;
+    left: 0;
+    opacity: 1;
+    pointer-events: all;
+}
+
+
+/*MENÚ HAMBURGUESA*/ 
+
+.bars-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 20px;
+    width: 25px;
+    gap: 3px;
+    position: relative;
+    transition: all 0.4s linear;
+    cursor: pointer;
+
+}
+
+.bars-container span {
+    width: 100%;
+    height: 4px;
+    border-radius: 4px;
+    background-color: goldenrod;
+}
+ 
+.bars-container span:first-child {
+    transition: all 0.4s linear;
+}
+  
+  .bars-container span:last-child {
+    transition: all 0.4s linear;
+}
+
+#menu-toggle:checked + .bars-container > span:first-child {
+    position: absolute;
+    margin-top: 8px;
+    transform: rotate(135deg);
+    transition: all 0.4s linear;
+}
+  
+#menu-toggle:checked + .bars-container > span:nth-child(2) {
+    opacity: 0;
+}
+  
+#menu-toggle:checked + .bars-container > span:last-child {
+    margin-bottom: 8px;
+    transform: rotate(-135deg);
+    transition: all 0.4s linear;
+}
+  
+#menu-toggle {
+    display: none;
+}
+
+/*BOTONES*/
+
+.menu-button {
+    display: none;
+}
+
+/*HERO*/
+
+#hero button{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    font-size: 2em;
+    font-weight: bold;
+    padding: 8px 10px;
+    padding-top: 10px;
+    border-radius: 5px;
+    border: 2px solid rgba(0,0,0,0.3);
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    color: white;
+    background-color: goldenrod;
+    display: inline-block;
+    cursor: default;
+}
+#hero{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    height: 90vh;
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+    )
+    ,url("hero-img.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+#hero h1{
+    color: white;
+}
+
+
+
+/*MEDIA*/
+
+@media (min-width: 850px){
+    header{
+        position: fixed;
+        width: 100%;
+    }
+
+    header .container{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    header nav{
+        flex-direction: row;
+        padding-bottom: 0;
+        padding-right: 20px;
+    }
+
+    #hero h1{
+        font-size: 5em;
+    }
+
+    /*NOSOTROS*/
+
+
+    #nosotros{
+        max-width: 1400px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        text-align: center;
+        font-family: 'Roboto','sans-serif';
+        
+    }    
+
+    #nosotros .container{
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    #nosotros .texto{
+        width: 50%;
+        max-width: 600px;
+        text-align: initial;
+        padding-left: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-family: 'sans-serif';
+    }
+
+    #nosotros h2{
+        margin-top: 0px;
+        margin-bottom: 1cm;
+        font-size: 1cm;
+        font-family: 'sans-serif';
+        color: goldenrod;
+    }
+
+    #nosotros .img-container{
+        background-size: cover;
+        background-position: center center;
+        height: 500px;
+        width: 400px; 
+    }
+
+
+
+    #nuestros-programas .carta{
+        padding: 50px;
+        background-size: 100% 150px;
+        background-repeat: no-repeat;
+        background-position-y: 0;
+        background-color: rgba(50, 50, 50, 1);
+        box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    }
+
+    .carta:first-child{
+        background-image: linear-gradient(
+            0deg,
+            rgba(0,0,0,0.5),
+            rgba(0,0,0,0.5)
+        )
+        ,url("chalecologo.jpg");
+
+    }
+
+    .carta:nth-child(2){
+        background-image: linear-gradient(
+            0deg,
+            rgba(0,0,0,0.5),
+            rgba(0,0,0,0.5)
+        )
+        ,url("camisetadeporte.jpg");
+    }
+
+    .carta:nth-child(3){
+        background-image: linear-gradient(
+            0deg,
+            rgba(0,0,0,0.5),
+            rgba(0,0,0,0.5)
+        )
+        ,url("gorralogo.jpg");
+
+    }
+
+
+    #final h2{
+        font-size: 5em;
+    }
+
+    #final button{
+        font-size: 2em;
+    }
+
+}
+
+/*SERVICE*/
+
+#nuestros-servicios{
+    background-color: rgb(30,30,30);
+    color: white;
+    text-align: center;
+    font-family: 'sans-serif';
+}
+
+#nuestros-servicios h2{
+    padding: 5%;
+    display: block;
+    margin-top: 5%;
+    font-size: 3.2em;
+}
+
+#nuestros-servicios h3{
+    padding: 1.5%;
+    display: block;
+    margin-top: 20px;
+    font-size: 2.2em;
+}
+
+#nuestros-servicios p{
+    display: none;
+    text-align: center;
+    margin: 2.3%;
+}
+
+#nuestros-servicios .card{
+    background-position: center center;
+    background-size: cover;
+    padding: 50px 0px;
+    margin: 30px;
+    border-radius: 15px;
+}
+
+#nuestros-servicios button{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    font-size: 0.9em;
+    font-weight: bold;
+    padding: 8px 10px;
+    padding-top: 10px;
+    border-radius: 5px;
+    border: 2px solid rgba(0,0,0,0.3);
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    color: white;
+    background-color: goldenrod;
+    display: inline-block;
+    cursor: default;  
+}
+
+/*FORM*/
+
+.h2-contacto{
+    height: 100px;
+    color: black;
+    display: block;
+    text-align: center;
+    align-items: center;
+    font-size: 1cm;
+    font-family: 'sans-serif';
+}
+
+.ante-footer-conteiner{
+    margin: 0 auto;
+    background-color: white;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: 'sans-serif';
+}
+
+.contacto-ante-footer{
+        display: flex;
+        justify-content: flex-start;
+        padding: 20px;
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+}
+        
+.contacto-ante-footer h2{
+            font-family: 'sans-serif';
+            font-size: 22px;
+            color: rgb(57, 57, 57);
+            align-items: center;
+}
+        
+.input-nombre-email{
+            width: 70%;
+            height: 45px;
+            background-color: white;
+            box-shadow: 1px 1px 5px black;
+            color: aliceblue;
+            padding: 5px;
+            border: none;
+}
+        
+.input-mensaje{
+            height: 100px;
+            width: 70%;
+            background-color: white;
+            box-shadow: 1px 1px 5px black;
+            color: black;
+            padding: 5px;
+            flex-wrap: wrap;
+            border: none;
+}
+
+.contacto-ante-footer button{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    font-size: 0.9em;
+    font-weight: bold;
+    padding: 8px 10px;
+    padding-top: 10px;
+    border-radius: 5px;
+    border: 2px solid rgba(0,0,0,0.3);
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    color: white;
+    background-color: goldenrod;
+    display: inline-block;
+    cursor: default;  
+}
+
+button:hover{
+    background-color: goldenrod;
+}
+
+/*FOOTER*/
+
+.footer-container{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    min-height: 50px;
+    padding-top: 20px;
+}
+
+.footer-container p{
+    font-size: 15px;
+    color: goldenrod;
+    font-family: 'sans-serif';
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.redes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+}
+
+.redes a i{
+    font-size: 25px;
+    font-weight: 600;
+    list-style: none;
+    text-decoration: none;
+    color: goldenrod;
+}
+
+.footer-terms {
+display: flex;
+gap: 25px;
+}
+
+.footer-terms a {
+color: rgb(25, 9, 41);
+font-weight: 300;
+margin-bottom: 30px;
+display: block;
+}
+
